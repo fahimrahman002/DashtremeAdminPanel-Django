@@ -1,0 +1,44 @@
+{%load static%} {% static "" as s %}
+<!DOCTYPE html>
+<html lang="en">
+  {%include 'includes/head.html'%}
+
+  <body class="bg-theme bg-theme1">
+    <!-- Start wrapper-->
+    <div id="wrapper">
+      {% include 'includes/sidebar.html' %}
+
+      <!--Start topbar header-->
+      {% include 'includes/topbar_header.html' %}
+      <!--End topbar header-->
+
+      <div class="clearfix"></div>
+
+      <div class="content-wrapper">
+        <div class="container-fluid">
+          {% block content %} {% endblock content %}
+          <!--start overlay-->
+          <div class="overlay toggle-menu"></div>
+          <!--end overlay-->
+        </div>
+        <!-- End container-fluid-->
+      </div>
+      <!--End content-wrapper-->
+      <!--Start Back To Top Button-->
+      <a href="javaScript:void();" class="back-to-top"
+        ><i class="fa fa-angle-double-up"></i>
+      </a>
+      <!--End Back To Top Button-->
+
+      {% include 'includes/footer.html' %}
+      <!--start color switcher-->
+      {% include 'includes/color_switcher.html' %}
+      <!--end color switcher-->
+    </div>
+    <!--End wrapper-->
+    {% include 'includes/js_links.html' %}
+
+    <!-- js extra links here  -->
+    {% block extra_links %} {% endblock extra_links %}
+  </body>
+</html>
